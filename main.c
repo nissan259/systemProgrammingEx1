@@ -11,26 +11,28 @@ int main() {
             printf(" %d", i);
         }
     }
+
       printf("\nThe Palindromes are:");
    for(int i = num1; i < num2; i++){
         if(isPalindrome(i)){
             printf(" %d",  i);
         }
     }
+          printf("\n");
     printf("\nThe Prime numbers are:");
     for (int i = num1; i <= num2; i++) {
         if (isPrime(i)) {
             printf(" %d", i);
         }
     }
+          
+      printf("n");
      printf("\nThe Strong numbers are:");
     for (int i = num1; i <= num2; i++) {
         if (isStrong(i)) {
             printf(" %d", i);
         }
     }
-   
-
-
+      printf("\n");
     return 0;
 }
