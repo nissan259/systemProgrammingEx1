@@ -3,6 +3,9 @@
 #define True 1
 #define False 0
 
+// Function prototype for reverseNum
+int reverseNum(int n, int copy);
+
 int clautepowerdiglRec(int dig, int counterdigits) {
     if (counterdigits == 0) {
         return 1;
@@ -35,31 +38,21 @@ int isArmstrong(int numbertocheck) {
     return False;
 }
 
-int isPalindromeRec(int tempdigits, int i, int tempnumber, int originalNumber) {
-    if (i == tempdigits / 2) {
-        return True;
+int isPalindrome(int n) {
+    int number = reverseNum(n, 0);
+
+    if (number == n) {
+        return 1;
+    } else {
+        return 0;
     }
-
-    int RightD = tempnumber % 10;
-    int pow = clautepowerdiglRec(10, tempdigits - 1);
-    int LeftD = originalNumber / pow;
-    LeftD = LeftD % 10;
-
-    if (RightD != LeftD) {
-        return False;
-    }
-
-    return isPalindromeRec(tempdigits - 1, i + 1, tempnumber / 10, originalNumber);
 }
 
-int isPalindrome(int number) {
-    int counterdigits = 0;
-    int numbertocheck = number;
-
-    while (numbertocheck != False) {
-        numbertocheck = numbertocheck / 10;
-        counterdigits++;
+// Function definition for reverseNum
+int reverseNum(int n, int copy) {
+    if (n == 0) {
+        return copy;
     }
-
-    return isPalindromeRec(counterdigits, 0, number, number);
+    copy = (copy * 10) + (n % 10);
+    return reverseNum(n / 10, copy);
 }

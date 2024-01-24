@@ -7,9 +7,7 @@ int ClacauteFactorial(int);
 
 int isPrime(int primeNumber) {
 
-    if (primeNumber <= 1) {
-        return False; // 0 and 1 are not prime numbers
-    }
+    
 
     if (primeNumber <= 3) {
         return True; // 2 and 3 are prime numbers
