@@ -4,7 +4,7 @@
 #define False 0
 
 // Function prototype for reverseNum
-int reverseNum(int n, int copy);
+int reverse(int n, int copy);
 
 int clautepowerdiglRec(int dig, int counterdigits) {
     if (counterdigits == 0) {
@@ -39,7 +39,7 @@ int isArmstrong(int numbertocheck) {
 }
 
 int isPalindrome(int n) {
-    int number = reverseNum(n, 0);
+    int number = reverse(n, 0);
 
     if (number == n) {
         return 1;
@@ -48,11 +48,10 @@ int isPalindrome(int n) {
     }
 }
 
-// Function definition for reverseNum
-int reverseNum(int n, int copy) {
+int reverse(int n, int numberrevrse) {
     if (n == 0) {
-        return copy;
+        return numberrevrse;
     }
-    copy = (copy * 10) + (n % 10);
-    return reverseNum(n / 10, copy);
+    numberrevrse = (numberrevrse * 10) + (n % 10);
+    return reverse(n / 10, numberrevrse);
 }
