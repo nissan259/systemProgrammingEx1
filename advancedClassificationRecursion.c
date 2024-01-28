@@ -1,14 +1,12 @@
 #include "NumClass.h"
 
-#define True 1
-#define False 0
 
 // Function prototype for reverseNum
 int reverse(int n, int copy);
 
 int clautepowerdiglRec(int dig, int counterdigits) {
     if (counterdigits == 0) {
-        return 1;
+        return True;
     }
     return dig * clautepowerdiglRec(dig, counterdigits - 1);
 }
@@ -42,9 +40,9 @@ int isPalindrome(int n) {
     int number = reverse(n, 0);
 
     if (number == n) {
-        return 1;
+        return True;
     } else {
-        return 0;
+        return False;
     }
 }
 

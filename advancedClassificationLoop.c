@@ -50,12 +50,12 @@ int isPalindrome(int number) {
         LeftD = LeftD % 10;
 
         if (RightD != LeftD) {
-            return 0;  // Changed to return 0 for False
+            return False;  // Changed to return 0 for False
         }
 
         tempdigits--;
         tempnumber = tempnumber / 10;
     }
 
-    return 1;  // Changed to return 1 for True
+    return True;  // Changed to return 1 for True
 }
